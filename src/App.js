@@ -10,20 +10,15 @@ const App = () => {
   useEffect(() => {
 
     const fetchMenu = async () => {
-      const menuResult = await fetch(
-        `http://localhost:3001/api/menu`, {
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }
-      })
-      )
-      .json()
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+
+      axios.get(`/api/menu`,
+        ).then(res => console.log(res.data))
+        .catch(err => console.log(err))
+
       // setMenu(menuResult)
     }
 
-    fetchMenu()
+      fetchMenu();
   }, [])
   return (
     <Card />
