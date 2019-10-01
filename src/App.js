@@ -1,27 +1,35 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
-import Card from './components/Card'
+import React from 'react'
+import MenuProvider from './context/MenuContext'
+// import Menu from './components/Menu'
 
 
 
 const App = () => {
-  const [menu, setMenu] = useState({})
 
-  useEffect(() => {
-
-    const fetchMenu = async () => {
-
-      axios.get(`/api/menu`,
-        ).then(res => console.log(res.data))
-        .catch(err => console.log(err))
-
-      // setMenu(menuResult)
-    }
-
-      fetchMenu();
-  }, [])
   return (
-    <Card />
+    <MenuProvider>
+    <>
+    {/* <h1>{menuTitle}</h1> */}
+    {/* need nav */}
+    {/* <Menu /> */}
+
+    </>
+    </MenuProvider>
+    <fragment>
+
+    <MenuProvider.Consumer>
+      {context => (
+
+        {
+          Object.keys(context.section).map(carID => (
+            <Card
+              id={carID}
+              section={context._key}
+            />
+          ))
+        }
+      )}
+    </MenuProvider.Consumer></>
   )
 }
 
