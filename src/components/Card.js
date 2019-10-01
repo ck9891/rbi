@@ -4,7 +4,7 @@ const Card = ({cardTitle}) => {
   console.log(`this is a card`)
   return (
     <div>
-      <h2>{cardTitle}</h2>
+      <h2>test{cardTitle}</h2>
     </div>
 
   )
