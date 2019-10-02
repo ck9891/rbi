@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
-const MenuContext = React.createContext()
+export const MenuContext = React.createContext()
 
 
 
