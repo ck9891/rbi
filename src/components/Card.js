@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Card = ({cardTitle}) => {
+const Card = ({id, section}) => {
   console.log(`this is a card`)
   return (
     <div>
-      <h2>test{cardTitle}</h2>
+      <h2>test{section}</h2>
     </div>
 
   )
